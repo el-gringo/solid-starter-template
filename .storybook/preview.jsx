@@ -1,8 +1,8 @@
-import { createRenderer, Config, loadFonts } from "@lightningtv/solid";
-import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl";
-import { Inspector } from "@lightningjs/renderer/inspector";
+import { createRenderer, Config, loadFonts } from "@solidtv/solid";
+import { WebGlCoreRenderer, SdfTextRenderer } from "@solidtv/renderer/webgl";
+import { Inspector } from "@solidtv/renderer/inspector";
 import fonts from "../src/fonts";
-import { useFocusManager } from "@lightningtv/solid/primitives";
+import { useFocusManager } from "@solidtv/solid/primitives";
 import { createSignal, Show } from "solid-js";
 import {
   Rounded,
@@ -11,8 +11,8 @@ import {
   RadialGradient,
   LinearGradient,
   HolePunch,
-} from "@lightningjs/renderer/webgl/shaders";
-import { RoundedWithBorder } from "@lightningtv/solid/shaders";
+} from "@solidtv/renderer/webgl/shaders";
+import { RoundedWithBorder } from "@solidtv/solid/shaders";
 
 Config.rendererOptions = {
   appWidth: 1920,

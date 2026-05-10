@@ -1,4 +1,4 @@
-import { Text, View } from "@lightningtv/solid";
+import { Text, View } from "@solidtv/solid";
 import { $t } from "../translate";
 import styles from "../styles";
 

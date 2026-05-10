@@ -1,6 +1,6 @@
-import { createRenderer, Config as LightningConfig, loadFonts } from "@lightningtv/solid";
+import { createRenderer, Config as LightningConfig, loadFonts } from "@solidtv/solid";
 import { Route } from "@solidjs/router";
-import { HashRouter, useFocusManager } from "@lightningtv/solid/primitives";
+import { HashRouter, useFocusManager } from "@solidtv/solid/primitives";
 import App from "./pages/App";
 import HelloWorld from "./pages/HelloWorld";
 import TextPage from "./pages/Text";
@@ -16,7 +16,7 @@ import {
   RadialGradient,
   LinearGradient,
   HolePunch,
-} from "@lightningjs/renderer/webgl/shaders";
+} from "@solidtv/renderer/webgl/shaders";
 
 merge(LightningConfig, config.lightning);
 

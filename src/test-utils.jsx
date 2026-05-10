@@ -1,4 +1,4 @@
-﻿import { render as solidRender, Config } from "@lightningtv/solid";
+﻿import { render as solidRender, Config } from "@solidtv/solid";
 
 Config.rendererOptions = {
   rootId: document.createElement("div"),

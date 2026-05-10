@@ -1,5 +1,4 @@
-import type { KeyMap, Config as LightningConfig } from "@lightningtv/solid";
-import { type KeyHoldOptions } from "@lightningtv/core/focusManager";
+import type { KeyMap, Config as LightningConfig, KeyHoldOptions } from "@solidtv/solid";
 
 export enum EDevicePlatform {
   CHROME = "CHROME",

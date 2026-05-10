@@ -1,8 +1,8 @@
 import { useNavigate } from "@solidjs/router";
-import { View, ElementNode } from "@lightningtv/solid";
-import { useAnnouncer, useMouse } from "@lightningtv/solid/primitives";
+import { View, ElementNode } from "@solidtv/solid";
+import { useAnnouncer, useMouse } from "@solidtv/solid/primitives";
 
-declare module "@lightningtv/solid/primitives" {
+declare module "@solidtv/solid/primitives" {
   interface KeyMap {
     Announcer: string | number | (string | number)[];
     Menu: string | number | (string | number)[];

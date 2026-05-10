@@ -1,5 +1,5 @@
-import { WebGlCoreRenderer, SdfTextRenderer } from "@lightningjs/renderer/webgl";
-import { Inspector } from "@lightningjs/renderer/inspector";
+import { WebGlCoreRenderer, SdfTextRenderer } from "@solidtv/renderer/webgl";
+import { Inspector } from "@solidtv/renderer/inspector";
 import { DeviceCommon } from "./device";
 
 export const config = {

@@ -1,4 +1,4 @@
-import { type NodeStyles, type TextStyles, Text, View } from "@lightningtv/solid";
+import { type NodeStyles, type TextStyles, Text, View } from "@solidtv/solid";
 
 const TextPage = () => {
   const OverviewContainer: NodeStyles = {

@@ -7,12 +7,6 @@ settings:
 importers:
   .:
     dependencies:
-      "@lightningjs/renderer":
-        specifier: 3.0.0-beta22
-        version: 3.0.0-beta22
-      "@lightningtv/solid":
-        specifier: ^3.1.4
-        version: 3.1.4(@lightningjs/renderer@3.0.0-beta22)(@solidjs/router@0.15.4(solid-js@1.9.11))(solid-js@1.9.11)
       "@lightningtv/vite-hex-transform":
         specifier: ^1.1.0
         version: 1.1.0(terser@5.46.0)
@@ -22,6 +16,12 @@ importers:
       "@solidjs/router":
         specifier: ^0.15.4
         version: 0.15.4(solid-js@1.9.11)
+      "@solidtv/renderer":
+        specifier: 1.0.8
+        version: 1.0.8
+      "@solidtv/solid":
+        specifier: 1.0.3
+        version: 1.0.3(@solidjs/router@0.15.4(solid-js@1.9.11))(@solidtv/renderer@1.0.8)(solid-js@1.9.11)
       "@storybook/addon-a11y":
         specifier: ^9.1.16
         version: 9.1.19(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@6.4.1(terser@5.46.0)(yaml@2.8.2)))
@@ -1574,23 +1574,6 @@ packages:
         integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==,
       }
 
-  "@lightningjs/renderer@3.0.0-beta22":
-    resolution:
-      {
-        integrity: sha512-4aBBSRJ+gczGQ0vAXYAGJpcrPh1WocWajuaHy2FO2RKmrPwOp8CRAR6s3g1coR9x0lbphBZEI/hSzu1zhGXiPQ==,
-      }
-    engines: { node: ">= 18.0.0", npm: ">= 10.0.0", pnpm: ">= 10.17.0" }
-
-  "@lightningtv/solid@3.1.4":
-    resolution:
-      {
-        integrity: sha512-MF1kITFzU1RWkcwsJTDgdysh5AbEpPwFOd5WXupbQpNtyGjS68h5p+UOqfeoaoWXlKeFqXLWYM2K2+QV6+ARHA==,
-      }
-    peerDependencies:
-      "@lightningjs/renderer": ^3.0.0-beta21
-      "@solidjs/router": ^0.15.1
-      solid-js: "*"
-
   "@lightningtv/vite-hex-transform@1.1.0":
     resolution:
       {
@@ -1896,6 +1879,23 @@ packages:
       }
     peerDependencies:
       solid-js: ^1.8.6
+
+  "@solidtv/renderer@1.0.8":
+    resolution:
+      {
+        integrity: sha512-K3vOZYafZ7qSnXR7wk+dTxh83+rrtJhZu0Cta7f8/Df2uPwdXig3jQmVo4YgB/E2nv0dEeW4trogsTVu3iG/aA==,
+      }
+    engines: { node: ">= 18.0.0", npm: ">= 10.0.0", pnpm: ">= 10.17.0" }
+
+  "@solidtv/solid@1.0.3":
+    resolution:
+      {
+        integrity: sha512-B5U2uFR6rTu7u0LpynIyynzt1JHmTVPn7sfm4U4UctN0RNt088R7LdXeAHiRHo/1Sad/QN/I2ekHf31wtIjgxQ==,
+      }
+    peerDependencies:
+      "@solidjs/router": ^0.15.1
+      "@solidtv/renderer": ^1.0.0
+      solid-js: "*"
 
   "@storybook/addon-a11y@9.1.19":
     resolution:
@@ -6469,18 +6469,6 @@ snapshots:
       "@jridgewell/resolve-uri": 3.1.2
       "@jridgewell/sourcemap-codec": 1.5.5
 
-  "@lightningjs/renderer@3.0.0-beta22": {}
-
-  "@lightningtv/solid@3.1.4(@lightningjs/renderer@3.0.0-beta22)(@solidjs/router@0.15.4(solid-js@1.9.11))(solid-js@1.9.11)":
-    dependencies:
-      "@lightningjs/renderer": 3.0.0-beta22
-      "@solid-primitives/event-listener": 2.4.3(solid-js@1.9.11)
-      "@solid-primitives/list": 0.1.2(solid-js@1.9.11)
-      "@solid-primitives/mouse": 2.1.4(solid-js@1.9.11)
-      "@solid-primitives/scheduled": 1.5.2(solid-js@1.9.11)
-      "@solidjs/router": 0.15.4(solid-js@1.9.11)
-      solid-js: 1.9.11
-
   "@lightningtv/vite-hex-transform@1.1.0(terser@5.46.0)":
     dependencies:
       vite: 5.4.21(terser@5.46.0)
@@ -6623,6 +6611,18 @@ snapshots:
 
   "@solidjs/router@0.15.4(solid-js@1.9.11)":
     dependencies:
+      solid-js: 1.9.11
+
+  "@solidtv/renderer@1.0.8": {}
+
+  "@solidtv/solid@1.0.3(@solidjs/router@0.15.4(solid-js@1.9.11))(@solidtv/renderer@1.0.8)(solid-js@1.9.11)":
+    dependencies:
+      "@solid-primitives/event-listener": 2.4.3(solid-js@1.9.11)
+      "@solid-primitives/list": 0.1.2(solid-js@1.9.11)
+      "@solid-primitives/mouse": 2.1.4(solid-js@1.9.11)
+      "@solid-primitives/scheduled": 1.5.2(solid-js@1.9.11)
+      "@solidjs/router": 0.15.4(solid-js@1.9.11)
+      "@solidtv/renderer": 1.0.8
       solid-js: 1.9.11
 
   "@storybook/addon-a11y@9.1.19(storybook@9.1.19(@testing-library/dom@10.4.1)(prettier@3.8.1)(vite@6.4.1(terser@5.46.0)(yaml@2.8.2)))":

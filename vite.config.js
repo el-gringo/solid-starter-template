@@ -23,7 +23,7 @@ export default defineConfig(({ mode }) => {
       }),
       solidPlugin({
         solid: {
-          moduleName: "@lightningtv/solid",
+          moduleName: "@solidtv/solid",
           generate: "universal",
         },
       }),
@@ -42,10 +42,10 @@ export default defineConfig(({ mode }) => {
         "@": path.resolve(__dirname, "./src"),
         "#devices": path.resolve(__dirname, "./devices"),
       },
-      dedupe: ["solid-js", "@lightningtv/solid", "@lightningtv/core", "@lightningjs/renderer"],
+      dedupe: ["solid-js", "@solidtv/solid", "@solidtv/renderer"],
     },
     optimizeDeps: {
-      exclude: ["@lightningtv/solid", "@lightningtv/core", "@lightningjs/renderer"],
+      exclude: ["@solidtv/solid", "@solidtv/renderer"],
     },
     server: {
       hmr: true,
