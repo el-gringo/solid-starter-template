@@ -1,25 +1,25 @@
-# Lightning Starter Template for SolidJS
+# Starter Template for SolidTV
 
-Part of https://lightningtv.dev/
+Part of https://solidtv.dev/
 
-Check out https://github.com/lightning-tv/solid for additional support.
+Check out https://github.com/solid-tv/solid for additional support.
 
 ## Quick Start
 
 ```sh
-> npx degit lightning-tv/solid-starter-template my-app
+> npx degit solid-tv/solid-starter-template my-app
 > cd my-app
 > npm i # or yarn or pnpm
 > npm start # or yarn or pnpm
 ```
 
-Read the Solid Docs: https://lightning-tv.github.io/solid/
+Read the Solid Docs: https://solidtv.dev/solid/
 
 ## Code Samples
 
 For up to date code and examples check out the full solid demo app:
 
-https://github.com/lightning-tv/solid-demo-app
+https://github.com/solid-tv/solid-demo-app
 
 ---
 
