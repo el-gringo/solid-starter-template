@@ -1,4 +1,4 @@
-import type { KeyMap, Config as LightningConfig, KeyHoldOptions } from "@solidtv/solid";
+import type { KeyMap, Config as LightningConfig } from "@solidtv/solid";
 
 export enum EDevicePlatform {
   CHROME = "CHROME",
@@ -28,7 +28,6 @@ export interface DeviceConfig {
   initialize: () => Promise<Device>;
   quality: QualityConfig;
   keys: Partial<KeyMap>;
-  keyHoldOptions: KeyHoldOptions;
 }
 
 export interface Device {

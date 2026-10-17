@@ -1,6 +1,8 @@
 import { createRenderer, Config as LightningConfig, loadFonts } from "@solidtv/solid";
 import { Route } from "@solidjs/router";
-import { HashRouter, useFocusManager } from "@solidtv/solid/primitives";
+import { useFocusManager } from "@solidtv/solid/primitives";
+import { HashRouter } from "@solidtv/solid/primitives/router";
+import type { RendererMain } from "@solidtv/renderer";
 import App from "./pages/App";
 import HelloWorld from "./pages/HelloWorld";
 import TextPage from "./pages/Text";
@@ -16,24 +18,25 @@ import {
   RadialGradient,
   LinearGradient,
   HolePunch,
-} from "@solidtv/renderer/webgl/shaders";
+} from "@solidtv/renderer/shaders";
 
 merge(LightningConfig, config.lightning);
 
 const { render, renderer } = createRenderer();
 
-const shManager = renderer.stage.shManager;
-shManager.registerShaderType("rounded", Rounded);
-shManager.registerShaderType("roundedWithBorder", RoundedWithBorder);
-shManager.registerShaderType("roundedWithShadow", RoundedWithShadow);
-shManager.registerShaderType("roundedWithBorderWithShadow", RoundedWithBorderAndShadow);
-shManager.registerShaderType("radialGradient", RadialGradient);
-shManager.registerShaderType("linearGradient", LinearGradient);
-shManager.registerShaderType("holePunch", HolePunch);
+// Shaders are WebGL-only; the DOM renderer is never enabled here.
+const shaders = renderer as RendererMain;
+shaders.registerShaderType("rounded", Rounded);
+shaders.registerShaderType("roundedWithBorder", RoundedWithBorder);
+shaders.registerShaderType("roundedWithShadow", RoundedWithShadow);
+shaders.registerShaderType("roundedWithBorderWithShadow", RoundedWithBorderAndShadow);
+shaders.registerShaderType("radialGradient", RadialGradient);
+shaders.registerShaderType("linearGradient", LinearGradient);
+shaders.registerShaderType("holePunch", HolePunch);
 
 loadFonts(fonts);
 render(() => {
-  useFocusManager(config.keys, config.keyHoldOptions);
+  useFocusManager(config.keys);
   return (
     <HashRouter root={App}>
       <Route path="/" component={HelloWorld} />

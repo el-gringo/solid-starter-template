@@ -1,8 +1,6 @@
-﻿import { render as solidRender, Config } from "@solidtv/solid";
+﻿import { createRenderer } from "@solidtv/solid";
 
-Config.rendererOptions = {
-  rootId: document.createElement("div"),
-};
+const { render: solidRender } = createRenderer(undefined, document.createElement("div"));
 
 export function render(Component) {
   return solidRender(() => <Component />);

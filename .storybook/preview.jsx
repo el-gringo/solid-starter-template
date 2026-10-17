@@ -1,18 +1,17 @@
 import { createRenderer, Config, loadFonts } from "@solidtv/solid";
-import { WebGlCoreRenderer, SdfTextRenderer } from "@solidtv/renderer/webgl";
 import { Inspector } from "@solidtv/renderer/inspector";
 import fonts from "../src/fonts";
 import { useFocusManager } from "@solidtv/solid/primitives";
 import { createSignal, Show } from "solid-js";
 import {
   Rounded,
+  RoundedWithBorder,
   RoundedWithShadow,
   RoundedWithBorderAndShadow,
   RadialGradient,
   LinearGradient,
   HolePunch,
-} from "@solidtv/renderer/webgl/shaders";
-import { RoundedWithBorder } from "@solidtv/solid/shaders";
+} from "@solidtv/renderer/shaders";
 
 Config.rendererOptions = {
   appWidth: 1920,
@@ -20,8 +19,6 @@ Config.rendererOptions = {
   deviceLogicalPixelRatio: 2 / 3,
   inspector: Inspector,
   devicePhysicalPixelRatio: 1,
-  fontEngines: [SdfTextRenderer],
-  renderEngine: WebGlCoreRenderer,
 };
 
 Config.fontSettings.fontFamily = "Roboto";
@@ -58,14 +55,13 @@ const preview = {
       if (startRenderer) {
         startRenderer = false;
         const { render, renderer } = createRenderer(undefined, solidRoot);
-        const shManager = renderer.stage.shManager;
-        shManager.registerShaderType("rounded", Rounded);
-        shManager.registerShaderType("roundedWithBorder", RoundedWithBorder);
-        shManager.registerShaderType("roundedWithShadow", RoundedWithShadow);
-        shManager.registerShaderType("roundedWithBorderWithShadow", RoundedWithBorderAndShadow);
-        shManager.registerShaderType("radialGradient", RadialGradient);
-        shManager.registerShaderType("linearGradient", LinearGradient);
-        shManager.registerShaderType("holePunch", HolePunch);
+        renderer.registerShaderType("rounded", Rounded);
+        renderer.registerShaderType("roundedWithBorder", RoundedWithBorder);
+        renderer.registerShaderType("roundedWithShadow", RoundedWithShadow);
+        renderer.registerShaderType("roundedWithBorderWithShadow", RoundedWithBorderAndShadow);
+        renderer.registerShaderType("radialGradient", RadialGradient);
+        renderer.registerShaderType("linearGradient", LinearGradient);
+        renderer.registerShaderType("holePunch", HolePunch);
         loadFonts(fonts);
 
         render(() => {
