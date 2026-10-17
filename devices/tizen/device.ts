@@ -1,4 +1,4 @@
-import { EDeviceType } from "@/managers/device";
+import { EDeviceType } from "#devices/devices";
 import { DeviceCommon } from "#devices/common/device";
 import { TizenPlayer } from "./player";
 
